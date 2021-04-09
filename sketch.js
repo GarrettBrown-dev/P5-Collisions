@@ -15,3 +15,10 @@ function draw() {
   b1.display();
   b2.display();
 }
+
+var d = dist(b1.x, b1.y, b2.x, b2.y);
+
+if (d < b1.r + b2.r) {
+  b1.changeColor();
+  b2.changeColor();
+}

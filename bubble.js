@@ -6,7 +6,7 @@ function Bubble(x, y) {
   this.display = function () {
     stroke(255);
     fill(255, 100);
-    ellipse(this.x, this.y, this.r) * 2, this.r * 2;
+    ellipse(this.x, this.y, this.r * 2, this.r * 2);
   };
 
   this.update = function () {

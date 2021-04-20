@@ -8,6 +8,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
+//create window boundaries.
+
 function draw() {
   keyPressed();
   rectMode(CENTER);
@@ -16,6 +18,16 @@ function draw() {
   fill(255);
 
   rect(rect1X, rect1Y, rect1Width, rect1Height);
+
+  if (rect1X < 0) {
+    rect1X = rect1X + move;
+  } else if (rect1X > this.width) {
+    rect1X = rect1X - move;
+  } else if (rect1Y < 0) {
+    rect1Y = rect1Y + move;
+  } else if (rect1Y > this.height) {
+    rect1Y = rect1Y - move;
+  }
 }
 
 function keyPressed() {

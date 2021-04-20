@@ -3,6 +3,10 @@ var rect1Y = 300;
 var rect1Width = 100;
 var rect1Height = 100;
 var move = 5;
+var rect2X = 300;
+var rect2Y = 300;
+var rect2Width = 50;
+var rect2Height = 50;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -27,6 +31,21 @@ function draw() {
     rect1Y = rect1Y + move;
   } else if (rect1Y > this.height) {
     rect1Y = rect1Y - move;
+  }
+
+  //barrier
+  fill(255, 0, 0);
+  rect(rect2X, rect2Y, rect2Width, rect2Height);
+
+  if (
+    rect1X > rect2X - rect2Width - 30 &&
+    rect1X < rect2X + rect2Width + 30 &&
+    rec1Y > rect2Y - rect2Height - 30 &&
+    rectY < rect2Y + rect2Height + 30
+  ) {
+    move = move * -1;
+  } else {
+    move = 5;
   }
 }
 
